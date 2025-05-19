@@ -12,6 +12,8 @@ import dime.utils
 import sys
 from multiprocessing.dummy import Pool
 sys.path += [".", "DIME_simple/code", "DIME_simple/code/ir_models"]
+#cd code
+#python main.py --collection trec-dl-2019 --encoder TctColbert --dime oracle
 
 import local_utils
 
@@ -24,7 +26,7 @@ if __name__ == "__main__":
     parser.add_argument("--basepath", default=".")
     args = parser.parse_args()
 
-
+    print(f"Encoder argument: {args.encoder}")  # 打印实际传递的 encoder 参数
     if args.collection == "trec-dl-2019":
         dataset = ir_datasets.load("msmarco-passage/trec-dl-2019/judged")
         qrels = pd.DataFrame(dataset.qrels_iter())
@@ -46,7 +48,8 @@ if __name__ == "__main__":
 
     col2corpus = {"trec-dl-2019": "msmarco-passages", "trec-dl-2020": "msmarco-passages", "trec-robust-2004": "tipster"}
 
-    encoder = getattr(importlib.import_module(f"ir_models.dense"), args.encoder.capitalize())()
+    #encoder = getattr(importlib.import_module(f"ir_models.dense"), args.encoder.capitalize())()
+    encoder = getattr(importlib.import_module("ir_models.dense"), args.encoder)()
     queries["representation"] = list(encoder.encode_queries(queries.text.to_list()))
 
 
