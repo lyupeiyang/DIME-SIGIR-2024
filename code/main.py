@@ -12,7 +12,8 @@ import dime.utils
 import sys
 from multiprocessing.dummy import Pool
 sys.path += [".", "DIME_simple/code", "DIME_simple/code/ir_models"]
-#cd code
+#cd /workspaces/DIME-SIGIR-2024/code
+#python encode_save.py
 #python main.py --collection trec-dl-2019 --encoder TctColbert --dime oracle
 
 import local_utils
