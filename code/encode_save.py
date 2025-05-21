@@ -41,7 +41,7 @@ if __name__ == "__main__":
     doc_ids = []
     doc_texts = []
 
-    print(" 开始读取文档内容...")
+    #print(" 开始读取文档内容...")
 
     # 只读取前 100000 条文档
     #for i, doc in enumerate(dataset.docs_iter()):
