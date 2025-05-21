@@ -44,19 +44,17 @@ if __name__ == "__main__":
     print(" 开始读取文档内容...")
 
     # 只读取前 100000 条文档
-    for i, doc in enumerate(dataset.docs_iter()):
-        if i >= 100000:
-            break
-        doc_ids.append(doc.doc_id)
-        doc_texts.append(doc.text)
-
-    print(f" 已读取文档数：{len(doc_ids)}")
-
-    #print(" 开始读取文档内容...")
-
-    #for doc in dataset.docs_iter():
+    #for i, doc in enumerate(dataset.docs_iter()):
+        #if i >= 100000:
+           # break
         #doc_ids.append(doc.doc_id)
         #doc_texts.append(doc.text)
+
+    print(" 开始读取文档内容...")
+
+    for doc in dataset.docs_iter():
+        doc_ids.append(doc.doc_id)
+        doc_texts.append(doc.text)
 
     print(f"总文档数：{len(doc_ids)}")
     # 输出路径（可根据项目结构调整）
