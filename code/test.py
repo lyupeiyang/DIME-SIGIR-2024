@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     print("📦 开始读取文档内容...")
 
-    #只读取前 100000 条文档
+    #只读取前 10 条文档
     #for i, doc in enumerate(dataset.docs_iter()):
         #if i >= 10:
             #break
