@@ -13,6 +13,8 @@ import sys
 from multiprocessing.dummy import Pool
 sys.path += [".", "DIME_simple/code", "DIME_simple/code/ir_models"]
 
+#python code/main.py --collection trec-dl-2019 --encoder contriever --dime oracle
+
 import local_utils
 
 if __name__ == "__main__":
